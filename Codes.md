@@ -64,10 +64,10 @@
     - formats are like :
 
       ```
-       Host rstudio
-       Hostname 129.127.107.217
-       User ning
-       ServerAliveInterval 60 # this is for preventing the VM from auto-exit in short time
+      Host rstudio
+      Hostname 129.127.107.217
+      User ning
+      ServerAliveInterval 60 # this is for preventing the VM from auto-exit in short time
       ```
 
   - publickeys to access VMs such as `hub` and `hub.pub` are in `~/.ssh/` as well
@@ -75,14 +75,61 @@
   - custom shortcuts are by editing the `~/.bashrc` file such as:
 
     ```
-       alias ll='ls -lh'
-       alias tofast='cd /fast/users/a1692215'
+      alias ll='ls -lh'
+      alias tofast='cd /fast/users/a1692215'
     ```
 
 3. Useful bash codes
 
+  - hostname or computername setup of Terminal
+
+    - `sudo scutil --set HostName <name-you-want>`
+    - 'sudo scutil --set ComputerName
+
+      <name-you-want>'</name-you-want>
+
   - to glimpse files
 
-    - ``
+    - usually with `head` and `tail` for text file and `|zcat` with zip file
+    - Full document check using `less` or `cat`
+
+  - to create a file
+
+    - using `touch`
+    - using `vim` to directly write a text
+
+  - to manipulate column file like .bed files
+
+    - `awk` and `cut` are the best
+    - sometimes `comm` and `diff` is good
+    - further should use `bedtool`
+
+  - [TMUX](https://tmux.github.io/)
+
+    - tmux is a system that preventing the VM from closing and run command in the background
+    - to check tmux session: `tmux list-session`
+    - to create a session: `tmux new-session -s <session-name>`
+    - to go to a session: `tmux attach-session -t <session-name>`
+    - to leave a session: `tmux detach`
+    - during a session, add a pane: `ctrl+B` then `%(shift+5)`, to switch pane using left or right
+    - during a session, to scroll: `ctrl+B` then `[`, and exit with `ESC`
 
 ## Python codes
+
+### Use LiClipse to write code and quick run
+
+### but when dealing with long script should use ATOM
+
+1. Set parameters for code
+
+  - [`argparse`](https://docs.python.org/2/howto/argparse.html) library
+
+2. Biodata analysis
+
+  - [`biopython`](http://biopython.org/DIST/docs/tutorial/Tutorial.html) library
+
+3. easy visual
+
+  - [jupyter(ipython notebook)](https://jupyter.org/)
+
+4. 1
